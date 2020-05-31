@@ -19,8 +19,8 @@ feudal_governments = {
 		potential = {
 			NOT = { culture_group = earth_kingdom_culture }
 			NOT = {	religion_group = air_religions }
-			NOT = { is_government_potential = water_tribe_government }
 			is_patrician = no
+			is_feudal = yes
 		}
 		
 		color = { 91 133 207 }
@@ -29,9 +29,12 @@ feudal_governments = {
 		barons_need_dynasty = yes
 		can_grant_kingdoms_and_empires_to_other_government = yes
 		can_build_tribal = no
-		uses_decadence = yes
 		vassal_limit = 10
 
+		capital_move_delay = 600
+
+		## Modifiers
+		court_size_modifier = 10
 	}
 	
 	feudal_government_earth_kingdom = {
@@ -69,6 +72,10 @@ feudal_governments = {
 		uses_decadence = yes
 		vassal_limit = 15
 
+		capital_move_delay = 600
+
+		## Modifiers
+		court_size_modifier = 15
 	}
 	
 	feudal_government_temple = {
@@ -97,6 +104,11 @@ feudal_governments = {
 
 		can_build_tribal = no
 		can_grant_kingdoms_and_empires_to_other_government = yes
+
+		capital_move_delay = 600
+
+		## Modifiers
+		court_size_modifier = 10
 
 	}
 	
@@ -133,6 +145,10 @@ feudal_governments = {
 		can_imprison_without_reason = no
 		can_revoke_without_reason = no
 		can_build_tribal = no
+		capital_move_delay = 600
+
+		## Modifiers
+		court_size_modifier = 10
 	}
 	
 	feudal_government_air_nomad = {
@@ -161,5 +177,9 @@ feudal_governments = {
 		allow_looting = no
 		can_change_to_nomad_on_start = yes
 		can_grant_kingdoms_and_empires_to_other_government = yes
+		capital_move_delay = 600
+
+		## Modifiers
+		court_size_modifier = 10
 	}
 }

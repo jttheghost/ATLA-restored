@@ -27,8 +27,14 @@ decisions = {
 		}
 		allow = {
 			war = no
-			any_demesne_title = {
-				is_occupied = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
 			}
 			prisoner = no
 			wealth = 25
@@ -105,8 +111,14 @@ decisions = {
 		}
 		allow = {
 			war = no
-			any_demesne_title = {
-				is_occupied = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
 			}
 			wealth = 25
 			prisoner = no
@@ -181,14 +193,20 @@ decisions = {
 				religion_group = air_religions
 				has_landed_title = e_earth_kingdom
 				has_landed_title = k_fire_nation
-				has_landed_title = e_fire_empire
+				has_landed_title = e_fire_nation
 				
 			}
 		}
 		allow = {
 			war = no
-			any_demesne_title = {
-				is_occupied = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
 			}
 			month = 8
 			wealth = 25
@@ -265,8 +283,14 @@ decisions = {
 		}
 		allow = {
 			war = no
-			any_demesne_title = {
-				is_occupied = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
 			}
 			NOT = { month = 10 }
 			wealth = 25
@@ -366,8 +390,14 @@ decisions = {
 		}
 		allow = {
 			war = no
-			any_demesne_title = {
-				is_occupied = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
 			}
 			prisoner = no
 			scaled_wealth = 0.2
@@ -426,11 +456,11 @@ decisions = {
 			is_ruler = yes
 			is_feudal = yes
 			prisoner = no
-			culture_group = outlaw_group
+			culture_group = outlaw_culture
 			NOT = { trait = incapable }
 			OR = {
 				has_character_modifier = patron_kali
-				county = { de_jure_liege = e_fire_empire }
+				county = { de_jure_liege = e_fire_nation }
 			}
 			NOT = {
 				has_character_modifier = holding_diwali_feast
@@ -458,8 +488,14 @@ decisions = {
 		}
 		allow = {
 			war = no
-			any_demesne_title = {
-				is_occupied = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
 			}
 			prisoner = no
 			scaled_wealth = 0.2

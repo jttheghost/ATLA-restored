@@ -540,8 +540,8 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 	spriteType = {
-		name = "GFX_trait_spacesword"
-		texturefile = "gfx/traits/spacesword1.png"
+		name = "GFX_trait_space_sword"
+		texturefile = "gfx/traits/space_sword.png"
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
@@ -794,6 +794,13 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_trait_disinherited"
 		texturefile = "gfx/traits/disinherited.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_hyw_veteran"
+		texturefile = "gfx/traits/vet.dds"
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"

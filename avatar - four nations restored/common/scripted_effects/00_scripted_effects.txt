@@ -1732,190 +1732,6 @@ add_measles_symptom_effect = {
 	}
 }
 
-add_pentapox_symptom_effect = {
-	random_list = {
-		10 = {
-			modifier = {
-				factor = 0
-				trait = rash
-			}
-			character_event = { id = ATLAILL.6 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = fever
-			}
-			character_event = { id = ATLAILL.4 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = cough
-			}
-			character_event = { id = ATLAILL.5 }
-		}
-	}
-}
-
-add_takun_cough_symptom_effect = {
-	random_list = {
-		10 = {
-			modifier = {
-				factor = 0
-				trait = cough
-			}
-			character_event = { id = ATLAILL.5 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = fever
-			}
-			character_event = { id = ATLAILL.4 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = chest_pain
-			}
-			character_event = { id = ATLAILL.10 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = fatigue
-			}
-			character_event = { id = ATLAILL.11 }
-		}
-	}
-}
-
-add_black_frost_symptom_effect = {
-	random_list = {
-		10 = {
-			modifier = {
-				factor = 0
-				trait = fever
-			}
-			character_event = { id = ATLAILL.4 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = abdominal_pain
-			}
-			character_event = { id = ATLAILL.15 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = fatigue
-			}
-			character_event = { id = ATLAILL.11 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = rash
-			}
-			character_event = { id = ATLAILL.6 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = headache
-			}
-			character_event = { id = ATLAILL.16 }
-		}
-	}
-}
-
-add_scorch_blight_symptom_effect = {
-	random_list = {
-		10 = {
-			modifier = {
-				factor = 0
-				trait = rash
-			}
-			character_event = { id = ATLAILL.6 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = fever
-			}
-			character_event = { id = ATLAILL.4 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = headache
-			}
-			character_event = { id = ATLAILL.16 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = malaise
-			}
-			character_event = { id = ATLAILL.20 }
-		}
-	}
-}
-
-add_verminbite_symptom_effect = {
-	random_list = {
-		10 = {
-			modifier = {
-				factor = 0
-				trait = malaise
-			}
-			character_event = { id = ATLAILL.20 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = fever
-			}
-			character_event = { id = ATLAILL.4 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = cramps
-			}
-			character_event = { id = ATLAILL.24 }
-		}
-	}
-}
-
-add_ashbreath_symptom_effect = {
-	random_list = {
-		10 = {
-			modifier = {
-				factor = 0
-				trait = cough
-			}
-			character_event = { id = ATLAILL.5 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = fever
-			}
-			character_event = { id = ATLAILL.4 }
-		}
-		10 = {
-			modifier = {
-				factor = 0
-				trait = chest_pain
-			}
-			character_event = { id = ATLAILL.10 }
-		}
-	}
-}
-
 add_smallpox_symptom_effect = {
 	random_list = {
 		10 = {
@@ -8749,7 +8565,6 @@ add_trait_for_prevs_secret_religion_society_effect = {
 
 flip_to_secret_religion_effect = {
 	convert_to_secret_religion = yes
-	abdicate_holy_order_if_religion_changes_effect = yes
 }
 
 add_prevs_secret_religion_trait_effect = {
@@ -8764,16 +8579,16 @@ add_secret_religion_trait_trigger_is_religion_or_old_religion_flag_clear_flag_af
     			AND = {
     				NOT = {
     					# OR = {
-    						has_character_flag = character_was_imperialism
+    						has_character_flag = character_was_fire_nation_imperialism
     					# }
     				}
-    				religion = fire_imperialism
+    				religion = fire_nation_imperialism
     			}
-    			has_character_flag = character_was_imperialism
+    			has_character_flag = character_was_fire_nation_imperialism
 			}
     	}
-    	set_secret_religion = fire_imperialism	
-    	clr_character_flag = character_was_fire_imperialism
+    	set_secret_religion = fire_nation_imperialism
+    	clr_character_flag = character_was_fire_nation_imperialism
 		break = yes
     }
 }
@@ -8781,18 +8596,18 @@ add_secret_religion_trait_trigger_is_religion_or_old_religion_flag_clear_flag_af
 add_religion_char_flag_effect = {
 	if = {
     	limit = { religion = fire_nation_imperialism }
-    	set_character_flag = character_was_imperialism
+    	set_character_flag = character_was_fire_nation_imperialism
     }
 }
 
 clr_religion_char_flag_effect = {
-    clr_character_flag = character_was_imperialism
+    clr_character_flag = character_was_fire_nation_imperialism
 }
 
 event_target_old_religion_from_flag_effect = {
 	if = {
-    	limit = { has_character_flag = character_was_imperialism }
-    	fire_imperialism = {
+    	limit = { has_character_flag = character_was_fire_nation_imperialism }
+    	fire_nation_imperialism = {
     		save_event_target_as = old_religion
     	}
     }
@@ -8848,72 +8663,72 @@ increase_visibility_effect = {
 	}
 }
 
-increase_visibility_minor_effect = {
-	#custom_tooltip = { text = debug_vis }
-	hidden_effect = {
-		change_variable = { which = visibility_value value = 2 } 
-		if = {
-			limit = {
-				check_variable = { which = visibility_value value = 15 }
-				NOR = {
-					has_character_modifier = under_suspicion
-					has_character_modifier = highly_suspect
-				}
-			}
-			add_character_modifier = {
-				name = under_suspicion
-				duration = -1
-			}
-			character_event = { id = MNSAK.4567 days = 1 }
-		}
-		if = {
-			limit = {
-				check_variable = { which = visibility_value value = 25 }
-				NOT = {
-					has_character_modifier = highly_suspect
-				}
-			}
-			remove_character_modifier = under_suspicion
-			add_character_modifier = {
-				name = highly_suspect duration = -1 
-			}
-			character_event = { id = MNSAK.4568 days = 1 }
-			liege = {
-				set_character_flag = secret_societies_interference
-				character_event = { id = MNSAK.4566 days = 1095 random = 1095 }
-			}
-		}
-		if = { # Too visible? You auto-reveal yourself if you are independent
-			limit = {
-				independent = yes
-				is_ruler = yes
-				check_variable = { which = visibility_value value = 40 }
-				NOT = {
-					has_character_flag = self_reveal
-				}
-			}
-			set_character_flag = self_reveal
-			if = {
-				limit = {
-					is_devil_worshiper_trigger = yes
-				}
-				add_character_modifier = {
-					name = known_satanist
-					duration = -1
-				}
-			}
-			if = {
-				limit = {
-					is_devil_worshiper_trigger = no
-				}
-				add_character_modifier = {
-					name = accused_apostate
-					duration = -1
-				}
-			}
-		}
-	}
-}
+# increase_visibility_minor_effect = {
+	# custom_tooltip = { text = debug_vis }
+	# hidden_effect = {
+		# change_variable = { which = visibility_value value = 2 } 
+		# if = {
+			# limit = {
+				# check_variable = { which = visibility_value value = 15 }
+				# NOR = {
+					# has_character_modifier = under_suspicion
+					# has_character_modifier = highly_suspect
+				# }
+			# }
+			# add_character_modifier = {
+				# name = under_suspicion
+				# duration = -1
+			# }
+			# character_event = { id = MNSAK.4567 days = 1 }
+		# }
+		# if = {
+			# limit = {
+				# check_variable = { which = visibility_value value = 25 }
+				# NOT = {
+					# has_character_modifier = highly_suspect
+				# }
+			# }
+			# remove_character_modifier = under_suspicion
+			# add_character_modifier = {
+				# name = highly_suspect duration = -1 
+			# }
+			# character_event = { id = MNSAK.4568 days = 1 }
+			# liege = {
+				# set_character_flag = secret_societies_interference
+				# character_event = { id = MNSAK.4566 days = 1095 random = 1095 }
+			# }
+		# }
+		# if = { # Too visible? You auto-reveal yourself if you are independent
+			# limit = {
+				# independent = yes
+				# is_ruler = yes
+				# check_variable = { which = visibility_value value = 40 }
+				# NOT = {
+					# has_character_flag = self_reveal
+				# }
+			# }
+			# set_character_flag = self_reveal
+			# if = {
+				# limit = {
+					# is_devil_worshiper_trigger = yes
+				# }
+				# add_character_modifier = {
+					# name = known_satanist
+					# duration = -1
+				# }
+			# }
+			# if = {
+				# limit = {
+					# is_devil_worshiper_trigger = no
+				# }
+				# add_character_modifier = {
+					# name = accused_apostate
+					# duration = -1
+				# }
+			# }
+		# }
+	# }
+# }
 
 decrease_visibility_effect = {
 	hidden_effect = {
@@ -9052,437 +8867,437 @@ decrease_visibility_effect = {
 	}
 }
 
-hermetic_add_herbal_ingredient_effect = {
-	hidden_effect = {
-		random_list = {
-			50 = {
-				add_artifact = ingredient_herb1
-			}
-			50 = {
-				add_artifact = ingredient_herb2
-			}
-			50 = {
-				add_artifact = ingredient_herb3
-			}
-			50 = {
-				add_artifact = ingredient_herb4
-			}
-			50 = {
-				add_artifact = ingredient_herb5
-			}
-			50 = {
-				add_artifact = ingredient_herb6
-			}
-			50 = {
-				add_artifact = ingredient_herb7
-			}
-			50 = {
-				add_artifact = ingredient_herb8
-			}
-			50 = {
-				add_artifact = ingredient_herb9
-			}
-		}
-	}
-}
+# hermetic_add_herbal_ingredient_effect = {
+	# hidden_effect = {
+		# random_list = {
+			# 50 = {
+				# add_artifact = ingredient_herb1
+			# }
+			# 50 = {
+				# add_artifact = ingredient_herb2
+			# }
+			# 50 = {
+				# add_artifact = ingredient_herb3
+			# }
+			# 50 = {
+				# add_artifact = ingredient_herb4
+			# }
+			# 50 = {
+				# add_artifact = ingredient_herb5
+			# }
+			# 50 = {
+				# add_artifact = ingredient_herb6
+			# }
+			# 50 = {
+				# add_artifact = ingredient_herb7
+			# }
+			# 50 = {
+				# add_artifact = ingredient_herb8
+			# }
+			# 50 = {
+				# add_artifact = ingredient_herb9
+			# }
+		# }
+	# }
+# }
 
-hermetic_add_animal_ingredient_effect = {
-	hidden_effect = {
-		random_list = {
-			50 = {
-				add_artifact = ingredient_animal1
-			}
-			50 = {
-				add_artifact = ingredient_animal2
-			}
-			50 = {
-				add_artifact = ingredient_animal3
-			}
-			50 = {
-				add_artifact = ingredient_animal4
-			}
-			50 = {
-				add_artifact = ingredient_animal5
-			}
-			50 = {
-				add_artifact = ingredient_animal6
-			}
-			50 = {
-				add_artifact = ingredient_animal7
-			}
-			50 = {
-				add_artifact = ingredient_animal8
-			}
-			50 = {
-				add_artifact = ingredient_animal9
-			}
-		}
-	}
-}
+# hermetic_add_animal_ingredient_effect = {
+	# hidden_effect = {
+		# random_list = {
+			# 50 = {
+				# add_artifact = ingredient_animal1
+			# }
+			# 50 = {
+				# add_artifact = ingredient_animal2
+			# }
+			# 50 = {
+				# add_artifact = ingredient_animal3
+			# }
+			# 50 = {
+				# add_artifact = ingredient_animal4
+			# }
+			# 50 = {
+				# add_artifact = ingredient_animal5
+			# }
+			# 50 = {
+				# add_artifact = ingredient_animal6
+			# }
+			# 50 = {
+				# add_artifact = ingredient_animal7
+			# }
+			# 50 = {
+				# add_artifact = ingredient_animal8
+			# }
+			# 50 = {
+				# add_artifact = ingredient_animal9
+			# }
+		# }
+	# }
+# }
 
-hermetic_add_misc_ingredient_effect = {
-	hidden_effect = {
-		random_list = {
-			50 = {
-				add_artifact = ingredient_metal_exotic1
-			}
-			50 = {
-				add_artifact = ingredient_metal_exotic2
-			}
-			50 = {
-				add_artifact = ingredient_metal_exotic3
-			}
-			50 = {
-				add_artifact = ingredient_metal_exotic4
-			}
-			50 = {
-				add_artifact = ingredient_metal_exotic5
-			}
-			50 = {
-				add_artifact = ingredient_metal_exotic6
-			}
-			50 = {
-				add_artifact = ingredient_metal_exotic7
-			}
-			50 = {
-				add_artifact = ingredient_metal_exotic8
-			}
-			50 = {
-				add_artifact = ingredient_metal_exotic9
-			}
-		}
-	}
-}
+# hermetic_add_misc_ingredient_effect = {
+	# hidden_effect = {
+		# random_list = {
+			# 50 = {
+				# add_artifact = ingredient_metal_exotic1
+			# }
+			# 50 = {
+				# add_artifact = ingredient_metal_exotic2
+			# }
+			# 50 = {
+				# add_artifact = ingredient_metal_exotic3
+			# }
+			# 50 = {
+				# add_artifact = ingredient_metal_exotic4
+			# }
+			# 50 = {
+				# add_artifact = ingredient_metal_exotic5
+			# }
+			# 50 = {
+				# add_artifact = ingredient_metal_exotic6
+			# }
+			# 50 = {
+				# add_artifact = ingredient_metal_exotic7
+			# }
+			# 50 = {
+				# add_artifact = ingredient_metal_exotic8
+			# }
+			# 50 = {
+				# add_artifact = ingredient_metal_exotic9
+			# }
+		# }
+	# }
+# }
 
-remove_scrying_omen_modifiers_effect = { #For cleaning up end-states of the Hermetics Scrying Power
-	if = {
-		limit = { has_character_modifier = good_battle_omen }
-		remove_character_modifier = good_battle_omen
-	}
-	if = {
-		limit = { has_character_modifier = bad_battle_omen }
-		remove_character_modifier = bad_battle_omen
-	}
-	if = {
-		limit = { has_character_modifier = good_relationship_omen }
-		remove_character_modifier = good_relationship_omen
-	}
-	if = {
-		limit = { has_character_modifier = bad_relationship_omen }
-		remove_character_modifier = bad_relationship_omen
-	}
-	if = {
-		limit = { has_character_modifier = good_power_omen }
-		remove_character_modifier = good_power_omen
-	}
-	if = {
-		limit = { has_character_modifier = bad_power_omen }
-		remove_character_modifier = bad_power_omen
-	}
-	hidden_effect = { remove_character_modifier = scrying_cooldown }
-	clr_character_flag = positive_reaction_to_scrying_flag
-	clr_character_flag = negative_reaction_to_scrying_flag
-	clr_character_flag = positive_event_flag
-	clr_character_flag = negative_event_flag
-	clear_delayed_event = { id = MNM.1225 }
-	clear_delayed_event = { id = MNM.1226 }
-	clear_delayed_event = { id = MNM.1227 }
-}
+# remove_scrying_omen_modifiers_effect = { #For cleaning up end-states of the Hermetics Scrying Power
+	# if = {
+		# limit = { has_character_modifier = good_battle_omen }
+		# remove_character_modifier = good_battle_omen
+	# }
+	# if = {
+		# limit = { has_character_modifier = bad_battle_omen }
+		# remove_character_modifier = bad_battle_omen
+	# }
+	# if = {
+		# limit = { has_character_modifier = good_relationship_omen }
+		# remove_character_modifier = good_relationship_omen
+	# }
+	# if = {
+		# limit = { has_character_modifier = bad_relationship_omen }
+		# remove_character_modifier = bad_relationship_omen
+	# }
+	# if = {
+		# limit = { has_character_modifier = good_power_omen }
+		# remove_character_modifier = good_power_omen
+	# }
+	# if = {
+		# limit = { has_character_modifier = bad_power_omen }
+		# remove_character_modifier = bad_power_omen
+	# }
+	# hidden_effect = { remove_character_modifier = scrying_cooldown }
+	# clr_character_flag = positive_reaction_to_scrying_flag
+	# clr_character_flag = negative_reaction_to_scrying_flag
+	# clr_character_flag = positive_event_flag
+	# clr_character_flag = negative_event_flag
+	# clear_delayed_event = { id = MNM.1225 }
+	# clear_delayed_event = { id = MNM.1226 }
+	# clear_delayed_event = { id = MNM.1227 }
+# }
 
-calculate_scrying_outcome_effect = { # the positive_event_flag/negative_event_flag need to be set somewhere in the target event in order for this to work...
-	custom_tooltip = { text = tooltip_info_omen_tt }
+# calculate_scrying_outcome_effect = { # the positive_event_flag/negative_event_flag need to be set somewhere in the target event in order for this to work...
+	# custom_tooltip = { text = tooltip_info_omen_tt }
 
-	if = {
-		limit = {
-			OR = {
-				AND = {
-					has_positive_omen_modifier_trigger = yes
-					has_character_flag = positive_event_flag
-				}
-				AND = {
-					has_negative_omen_modifier_trigger = yes
-					has_character_flag = negative_event_flag
-				}
-			}
-		}
-		upgrade_seer_modifier_effect = yes
-	}
-	if = {
-		limit = {
-			OR = {
-				AND = {
-					has_positive_omen_modifier_trigger = yes
-					has_character_flag = negative_event_flag
-				}
-				AND = {
-					has_negative_omen_modifier_trigger = yes
-					has_character_flag = positive_event_flag
-				}
-			}
-		}
-		downgrade_seer_modifier_effect = yes
-	}
-	clr_character_flag = positive_event_flag
-	clr_character_flag = negative_event_flag
-}
+	# if = {
+		# limit = {
+			# OR = {
+				# AND = {
+					# has_positive_omen_modifier_trigger = yes
+					# has_character_flag = positive_event_flag
+				# }
+				# AND = {
+					# has_negative_omen_modifier_trigger = yes
+					# has_character_flag = negative_event_flag
+				# }
+			# }
+		# }
+		# upgrade_seer_modifier_effect = yes
+	# }
+	# if = {
+		# limit = {
+			# OR = {
+				# AND = {
+					# has_positive_omen_modifier_trigger = yes
+					# has_character_flag = negative_event_flag
+				# }
+				# AND = {
+					# has_negative_omen_modifier_trigger = yes
+					# has_character_flag = positive_event_flag
+				# }
+			# }
+		# }
+		# downgrade_seer_modifier_effect = yes
+	# }
+	# clr_character_flag = positive_event_flag
+	# clr_character_flag = negative_event_flag
+# }
 
-upgrade_seer_modifier_effect = { # Modifiers gotten at end-states of the Hermetics Scrying Power
-	if = {
-		limit = {
-			has_a_seer_modifier_trigger = yes
-		}
-		trigger_switch = {
-			on_trigger = has_character_modifier
-			fulfilled_vision_worst = {
-				remove_character_modifier = fulfilled_vision_worst
-				add_character_modifier = {
-		    		name = fulfilled_vision_bad
-		    		duration = 2555
-		    	}
-			}
-			fulfilled_vision_bad = {
-				remove_character_modifier = fulfilled_vision_bad
-				add_character_modifier = {
-		    		name = fulfilled_vision_ok
-		    		duration = 2555
-		    	}
-			}
-			fulfilled_vision_ok = {
-				remove_character_modifier = fulfilled_vision_ok
-				add_character_modifier = {
-		    		name = fulfilled_vision_great
-		    		duration = 2555
-		    	}
-			}
-			fulfilled_vision_great = {
-				add_character_modifier = {
-		    		name = fulfilled_vision_great
-		    		duration = 2555
-		    	}
-			}
-		}
-	}
-	if = {
-		limit = {
-			has_a_seer_modifier_trigger = no
-		}
-		add_character_modifier = {
-    		name = fulfilled_vision_ok
-    		duration = 2555
-    	}
-	}
-}
+# upgrade_seer_modifier_effect = { # Modifiers gotten at end-states of the Hermetics Scrying Power
+	# if = {
+		# limit = {
+			# has_a_seer_modifier_trigger = yes
+		# }
+		# trigger_switch = {
+			# on_trigger = has_character_modifier
+			# fulfilled_vision_worst = {
+				# remove_character_modifier = fulfilled_vision_worst
+				# add_character_modifier = {
+		    		# name = fulfilled_vision_bad
+		    		# duration = 2555
+		    	# }
+			# }
+			# fulfilled_vision_bad = {
+				# remove_character_modifier = fulfilled_vision_bad
+				# add_character_modifier = {
+		    		# name = fulfilled_vision_ok
+		    		# duration = 2555
+		    	# }
+			# }
+			# fulfilled_vision_ok = {
+				# remove_character_modifier = fulfilled_vision_ok
+				# add_character_modifier = {
+		    		# name = fulfilled_vision_great
+		    		# duration = 2555
+		    	# }
+			# }
+			# fulfilled_vision_great = {
+				# add_character_modifier = {
+		    		# name = fulfilled_vision_great
+		    		# duration = 2555
+		    	# }
+			# }
+		# }
+	# }
+	# if = {
+		# limit = {
+			# has_a_seer_modifier_trigger = no
+		# }
+		# add_character_modifier = {
+    		# name = fulfilled_vision_ok
+    		# duration = 2555
+    	# }
+	# }
+# }
 
-downgrade_seer_modifier_effect = { # Modifiers gotten at end-states of the Hermetics Scrying Power
-	if = {
-		limit = {
-			has_a_seer_modifier_trigger = yes
-		}
-		trigger_switch = {
-			on_trigger = has_character_modifier
-			fulfilled_vision_great = {
-				remove_character_modifier = fulfilled_vision_great
-				add_character_modifier = {
-		    		name = fulfilled_vision_ok
-		    		duration = 2555
-		    	}
-			}
-			fulfilled_vision_ok = {
-				remove_character_modifier = fulfilled_vision_ok
-				add_character_modifier = {
-		    		name = fulfilled_vision_bad
-		    		duration = 2555
-		    	}
-			}
-			fulfilled_vision_bad = {
-				remove_character_modifier = fulfilled_vision_bad
-				add_character_modifier = {
-		    		name = fulfilled_vision_worst
-		    		duration = 2555
-		    	}
-			}
-			fulfilled_vision_worst = {
-				add_character_modifier = {
-		    		name = fulfilled_vision_worst
-		    		duration = 2555
-		    	}
-			}
-		}
-	}
-	if = {
-		limit = {
-			has_a_seer_modifier_trigger = no
-		}
-		add_character_modifier = {
-    		name = fulfilled_vision_bad
-    		duration = 2555
-    	}
-	}
-}
+# downgrade_seer_modifier_effect = { # Modifiers gotten at end-states of the Hermetics Scrying Power
+	# if = {
+		# limit = {
+			# has_a_seer_modifier_trigger = yes
+		# }
+		# trigger_switch = {
+			# on_trigger = has_character_modifier
+			# fulfilled_vision_great = {
+				# remove_character_modifier = fulfilled_vision_great
+				# add_character_modifier = {
+		    		# name = fulfilled_vision_ok
+		    		# duration = 2555
+		    	# }
+			# }
+			# fulfilled_vision_ok = {
+				# remove_character_modifier = fulfilled_vision_ok
+				# add_character_modifier = {
+		    		# name = fulfilled_vision_bad
+		    		# duration = 2555
+		    	# }
+			# }
+			# fulfilled_vision_bad = {
+				# remove_character_modifier = fulfilled_vision_bad
+				# add_character_modifier = {
+		    		# name = fulfilled_vision_worst
+		    		# duration = 2555
+		    	# }
+			# }
+			# fulfilled_vision_worst = {
+				# add_character_modifier = {
+		    		# name = fulfilled_vision_worst
+		    		# duration = 2555
+		    	# }
+			# }
+		# }
+	# }
+	# if = {
+		# limit = {
+			# has_a_seer_modifier_trigger = no
+		# }
+		# add_character_modifier = {
+    		# name = fulfilled_vision_bad
+    		# duration = 2555
+    	# }
+	# }
+# }
 
-scrying_omen_fulfilled_by_gaining_disease_effect = { #scrying result are sent if someone gets sick and you are carrying an omen (fired from rip_symptom_events)
-	hidden_effect = {
-		host = {
-			if = {
-				limit = {
-					OR = {
-						is_close_relative = ROOT
-						is_friend = ROOT
-					}
-					OR = {
-						has_character_modifier = bad_relationship_omen
-						has_character_modifier = good_relationship_omen
-					}
-				}
-				character_event = { id = MNM.1221 days = 5 random = 5 } #to the host of sick character
-			}
-		}
-		father = {
-			if = {
-				limit = { 
-					is_liege_of = ROOT
-					OR = {
-						has_character_modifier = bad_relationship_omen
-						has_character_modifier = good_relationship_omen
-					}
-				}
-				character_event = { id = MNM.1221 days = 5 random = 5 }
-			}
-		}
-		mother = {
-			if = {
-				limit = { 
-					is_liege_of = ROOT
-					OR = {
-						has_character_modifier = bad_relationship_omen
-						has_character_modifier = good_relationship_omen
-					}
-				}
-				character_event = { id = MNM.1221 days = 5 random = 5 }
-			}
-		}
-		spouse = {
-			if = {
-				limit = {
-					is_liege_of = ROOT
-					OR = {
-						has_character_modifier = bad_relationship_omen
-						has_character_modifier = good_relationship_omen
-					}
-				}
-				character_event = { id = MNM.1221 days = 5 random = 5 }
-			}
-		}
-		lover = {
-			if = {
-				limit = {
-					is_liege_of = ROOT
-					OR = {
-						has_character_modifier = bad_relationship_omen
-						has_character_modifier = good_relationship_omen
-					}
-				}
-				character_event = { id = MNM.1221 days = 5 random = 5 }
-			}
-		}
+# scrying_omen_fulfilled_by_gaining_disease_effect = { #scrying result are sent if someone gets sick and you are carrying an omen (fired from rip_symptom_events)
+	# hidden_effect = {
+		# host = {
+			# if = {
+				# limit = {
+					# OR = {
+						# is_close_relative = ROOT
+						# is_friend = ROOT
+					# }
+					# OR = {
+						# has_character_modifier = bad_relationship_omen
+						# has_character_modifier = good_relationship_omen
+					# }
+				# }
+				# character_event = { id = MNM.1221 days = 5 random = 5 } #to the host of sick character
+			# }
+		# }
+		# father = {
+			# if = {
+				# limit = { 
+					# is_liege_of = ROOT
+					# OR = {
+						# has_character_modifier = bad_relationship_omen
+						# has_character_modifier = good_relationship_omen
+					# }
+				# }
+				# character_event = { id = MNM.1221 days = 5 random = 5 }
+			# }
+		# }
+		# mother = {
+			# if = {
+				# limit = { 
+					# is_liege_of = ROOT
+					# OR = {
+						# has_character_modifier = bad_relationship_omen
+						# has_character_modifier = good_relationship_omen
+					# }
+				# }
+				# character_event = { id = MNM.1221 days = 5 random = 5 }
+			# }
+		# }
+		# spouse = {
+			# if = {
+				# limit = {
+					# is_liege_of = ROOT
+					# OR = {
+						# has_character_modifier = bad_relationship_omen
+						# has_character_modifier = good_relationship_omen
+					# }
+				# }
+				# character_event = { id = MNM.1221 days = 5 random = 5 }
+			# }
+		# }
+		# lover = {
+			# if = {
+				# limit = {
+					# is_liege_of = ROOT
+					# OR = {
+						# has_character_modifier = bad_relationship_omen
+						# has_character_modifier = good_relationship_omen
+					# }
+				# }
+				# character_event = { id = MNM.1221 days = 5 random = 5 }
+			# }
+		# }
 
-		if = {
-			limit = {
-				OR = {
-					has_character_modifier = bad_power_omen
-					has_character_modifier = good_power_omen
-				}
-			}
-			character_event = { id = MNM.1220 days = 5 random = 5 } #to the sick character themselves
-		}
-	}
-}
+		# if = {
+			# limit = {
+				# OR = {
+					# has_character_modifier = bad_power_omen
+					# has_character_modifier = good_power_omen
+				# }
+			# }
+			# character_event = { id = MNM.1220 days = 5 random = 5 } #to the sick character themselves
+		# }
+	# }
+# }
 
-scrying_omen_fulfilled_by_removing_disease_effect = { #scrying result are sent if someone gets sick and you are carrying an omen (fired from rip_symptom_events)
-	hidden_effect = {
-		host = {
-			if = {
-				limit = {
-					OR = {
-						is_close_relative = ROOT
-						is_friend = ROOT
-					}
-					OR = {
-						has_character_modifier = good_relationship_omen
-						has_character_modifier = bad_relationship_omen
-					}
-				}
-				character_event = { id = MNM.1223 days = 5 random = 5 } #to the host of sick character
-			}
-		}
-		father = {
-			if = {
-				limit = { 
-					is_liege_of = ROOT
-					OR = {
-						has_character_modifier = good_relationship_omen
-						has_character_modifier = bad_relationship_omen
-					}
-				}
-				character_event = { id = MNM.1223 days = 5 random = 5 }
-			}
-		}
-		mother = {
-			if = {
-				limit = { 
-					is_liege_of = ROOT
-					OR = {
-						has_character_modifier = good_relationship_omen
-						has_character_modifier = bad_relationship_omen
-					}
-				}
-				character_event = { id = MNM.1223 days = 5 random = 5 }
-			}
-		}
-		spouse = {
-			if = {
-				limit = {
-					is_liege_of = ROOT
-					OR = {
-						has_character_modifier = good_relationship_omen
-						has_character_modifier = bad_relationship_omen
-					}
-				}
-				character_event = { id = MNM.1223 days = 5 random = 5 }
-			}
-		}
-		lover = {
-			if = {
-				limit = {
-					is_liege_of = ROOT
-					OR = {
-						has_character_modifier = good_relationship_omen
-						has_character_modifier = bad_relationship_omen
-					}
-				}
-				character_event = { id = MNM.1223 days = 5 random = 5 }
-			}
-		}
+# scrying_omen_fulfilled_by_removing_disease_effect = { #scrying result are sent if someone gets sick and you are carrying an omen (fired from rip_symptom_events)
+	# hidden_effect = {
+		# host = {
+			# if = {
+				# limit = {
+					# OR = {
+						# is_close_relative = ROOT
+						# is_friend = ROOT
+					# }
+					# OR = {
+						# has_character_modifier = good_relationship_omen
+						# has_character_modifier = bad_relationship_omen
+					# }
+				# }
+				# character_event = { id = MNM.1223 days = 5 random = 5 } #to the host of sick character
+			# }
+		# }
+		# father = {
+			# if = {
+				# limit = { 
+					# is_liege_of = ROOT
+					# OR = {
+						# has_character_modifier = good_relationship_omen
+						# has_character_modifier = bad_relationship_omen
+					# }
+				# }
+				# character_event = { id = MNM.1223 days = 5 random = 5 }
+			# }
+		# }
+		# mother = {
+			# if = {
+				# limit = { 
+					# is_liege_of = ROOT
+					# OR = {
+						# has_character_modifier = good_relationship_omen
+						# has_character_modifier = bad_relationship_omen
+					# }
+				# }
+				# character_event = { id = MNM.1223 days = 5 random = 5 }
+			# }
+		# }
+		# spouse = {
+			# if = {
+				# limit = {
+					# is_liege_of = ROOT
+					# OR = {
+						# has_character_modifier = good_relationship_omen
+						# has_character_modifier = bad_relationship_omen
+					# }
+				# }
+				# character_event = { id = MNM.1223 days = 5 random = 5 }
+			# }
+		# }
+		# lover = {
+			# if = {
+				# limit = {
+					# is_liege_of = ROOT
+					# OR = {
+						# has_character_modifier = good_relationship_omen
+						# has_character_modifier = bad_relationship_omen
+					# }
+				# }
+				# character_event = { id = MNM.1223 days = 5 random = 5 }
+			# }
+		# }
 
-		if = {
-			limit = {
-				OR = {
-					has_character_modifier = good_power_omen
-					has_character_modifier = bad_power_omen
-				}
-			}
-			character_event = { id = MNM.1222 days = 5 random = 5 } #to the sick character themselves
-		}
-	}
-}
+		# if = {
+			# limit = {
+				# OR = {
+					# has_character_modifier = good_power_omen
+					# has_character_modifier = bad_power_omen
+				# }
+			# }
+			# character_event = { id = MNM.1222 days = 5 random = 5 } #to the sick character themselves
+		# }
+	# }
+# }
 
-add_pet_owl_effect = {
-	add_character_modifier = {
-		name = pet_owl
-		duration = -1
-	}
-	hidden_tooltip = { character_event = { id = 77800 days = 3500 random = 2000 } } # Owl dies
-}
+# add_pet_owl_effect = {
+	# add_character_modifier = {
+		# name = pet_owl
+		# duration = -1
+	# }
+	# hidden_tooltip = { character_event = { id = 77800 days = 3500 random = 2000 } } # Owl dies
+# }
 
 add_mission_succeed_influence_effect = { 
 	add_society_modifier = 	{
@@ -10249,22 +10064,22 @@ add_western_zodiac_trait_effect = {
 	}
 }
 
-flip_secret_religious_community_provinces = {
-	trigger_switch = {
-		on_trigger = society_member_of
-		secret_religious_society_imperialism = {
-			ROOT = {
-				any_demesne_province = {
-					limit = {
-						has_province_modifier = secret_imperialism_community
-					}
-					religion = fire_nation_imperialism
-					remove_province_modifier = secret_imperialism_community
-				}
-			}
-		}
-	}
-}
+# flip_secret_religious_community_provinces = {
+	# trigger_switch = {
+		# on_trigger = society_member_of
+		# secret_religious_society_fire_nation_imperialism = {
+			# ROOT = {
+				# any_demesne_province = {
+					# limit = {
+						# has_province_modifier = secret_fire_nation_imperialism_community
+					# }
+					# religion = fire_nation_imperialism
+					# remove_province_modifier = secret_fire_nation_imperialism_community
+				# }
+			# }
+		# }
+	# }
+# }
 
 clean_up_after_leaving_society_effect = {
 	hidden_effect = {
@@ -11458,24 +11273,24 @@ send_final_book_outcome_event_effect = {
 	#character_event = { id = JD.10070 days = 5 random = 10 } #Testing values...
 	character_event = { id = JD.10070 days = 565 random = 3650 }
 }
-root_secret_religion_provinces_convert_effect = {
-	ROOT = {
-		trigger_switch = {
-			on_trigger = society_member_of
-			secret_religious_society_imperialism = {
-				PREV = {
-					any_demesne_province = {
-						limit = {
-							has_province_modifier = secret_imperialism_community
-						}
-						religion = fire_imperialism
-						remove_province_modifier = secret_imperialism_community
-					}
-				}
-			} 
-		}
-	}
-}
+# root_secret_religion_provinces_convert_effect = {
+	# ROOT = {
+		# trigger_switch = {
+			# on_trigger = society_member_of
+			# secret_religious_society_fire_nation_imperialism = {
+				# PREV = {
+					# any_demesne_province = {
+						# limit = {
+							# has_province_modifier = secret_fire_nation_imperialism_community
+						# }
+						# religion = fire_nation_imperialism
+						# remove_province_modifier = secret_fire_nation_imperialism_community
+					# }
+				# }
+			# } 
+		# }
+	# }
+# }
 troubled_pregnancy_chance_low_effect = { 
 random_list = { 
 	70 = { custom_tooltip = { text = tooltip_pregnancy_stable } }
